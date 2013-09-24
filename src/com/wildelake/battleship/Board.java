@@ -11,7 +11,7 @@ public class Board {
 		return false;	
 	}
 	public boolean outgoingAttack(int x, int y, Board b){	//Returns true if hit and false if not a hit. 
-		return false;
+		return b.incomingAttack(x, y);
 	}
 	// TODO
 	public CellState cellState(int x, int y) {				//Returns the state of the targeted cell of this board (Ie, attacksAgainst). 
