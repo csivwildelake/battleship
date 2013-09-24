@@ -1,6 +1,5 @@
 package com.wildelake.battleship;
 
-import java.awt.Point;
 import java.util.ArrayList;
 
 public class Ship {
@@ -33,7 +32,7 @@ public class Ship {
 	 */
 
 	public class AircraftCarrier extends Ship {
-
+		
 	}
 	public class Battleship extends Ship {
 
