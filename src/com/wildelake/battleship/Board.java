@@ -7,15 +7,28 @@ public class Board {
 	
 	// TODO
 	public boolean incomingAttack(int x, int y) {			//Returns true if hit and false if not a hit. 
-		//The code here should check the incoming coordinate against each ship, and if it's in any, mark that cell as hit. 
+		boolean hitOrMiss = false;
+		//The code here should check the incoming coordinate against each ship, and if it's in any, make hitOrMiss true while marking that ship coord as hit. 
+		if(hitOrMiss){
+			attacksAgainst[x][y] = CellState.Hit;
+		}else{
+			attacksAgainst[x][y] = CellState.Miss;
+		}
 		return false;	
 	}
 	public boolean outgoingAttack(int x, int y, Board b){	//Returns true if hit and false if not a hit. 
-		return b.incomingAttack(x, y);
+		boolean wasHit = b.incomingAttack(x, y);
+		if(wasHit){
+			attacksBy[x][y] = CellState.Hit;
+		}else{
+			attacksBy[x][y] = CellState.Miss;
+		}
+		return wasHit;
 	}
-	// TODO
+	
+	
 	public CellState cellState(int x, int y) {				//Returns the state of the targeted cell of this board (Ie, attacksAgainst). 
-		return CellState.Hit;
+		return attacksAgainst[x][y];
 	}
 	public enum CellState {
 		Hit, Miss, Untargetted;
