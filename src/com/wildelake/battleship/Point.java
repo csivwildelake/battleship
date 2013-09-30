@@ -6,12 +6,12 @@ public class Point {
 		this.x = x;
 		this.y = y;
 	}
-	public void setX(int in) {
-		x = in;
-	}
-	public void setY(int in) {
-		y = in;
-	}
+//	public void setX(int in) {
+//		x = in;
+//	}
+//	public void setY(int in) {
+//		y = in;
+//	}
 	public int getX() {
 		return x;
 	}

@@ -32,18 +32,28 @@ public class Ship {
 	 */
 
 	public class AircraftCarrier extends Ship {
-		
+		public AircraftCarrier(int x, int y, boolean vertical) {
+			super(x,y,vertical,5);
+		}
 	}
 	public class Battleship extends Ship {
-
+		public Battleship(int x, int y, boolean vertical) {
+			super(x,y,vertical,4);
+		}
 	}
 	public class Cruiser extends Ship {
-
-	}
-	public class Destroyer extends Ship {
-
+		public Cruiser(int x, int y, boolean vertical) {
+			super(x,y,vertical,3);
+		}
 	}
 	public class Submarine extends Ship {
-
+		public Submarine(int x, int y, boolean vertical) {
+			super(x,y,vertical,3);
+		}
+	}
+	public class Destroyer extends Ship {
+		public Destroyer(int x, int y, boolean vertical) {
+			super(x,y,vertical,2);
+		}
 	}
 }
