@@ -5,10 +5,9 @@ public class Board {
 	private CellState[][] attacksBy;		//This is what attacks a player has made. It's altered by outgoingAttack().
 	private Ship[] containedShips;
 	
-	// TODO
 	public boolean incomingAttack(int x, int y) {			//Returns true if hit and false if not a hit. 
 		boolean hitOrMiss = false;
-		//The code here should check the incoming coordinate against each ship, and if it's in any, make hitOrMiss true while marking that ship coord as hit. 
+		// TODO The code here should check the incoming coordinate against each ship, and if it's in any, make hitOrMiss true while marking that ship coord as hit. 
 		if(hitOrMiss){
 			attacksAgainst[x][y] = CellState.Hit;
 		}else{
