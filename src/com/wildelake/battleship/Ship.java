@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public class Ship {
 	ArrayList<Point> hitbox;
-	private Ship() {
-		
-	}
+	
 	private Ship(int x, int y, boolean vertical, int length) {
 		/* x and y determine key point of ship (lowest x, lowest y)
 		 * (vertical)?ship is vertically oriented:ship is horizontally oriented
@@ -30,6 +28,19 @@ public class Ship {
 	 * Cruiser: 3 tiles
 	 * Destroyer: 2 tiles
 	 */
+	
+	public ArrayList<Point> getHitbox() {
+		return hitbox;
+	}
+	
+	//returns true if the ship is hit on all points, false otherwise
+	public boolean isSunk() { 
+		boolean out = false;
+		for(Point p : hitbox) {
+			out = out || p.isHit();
+		}
+		return out;
+	}
 
 	public class AircraftCarrier extends Ship {
 		public AircraftCarrier(int x, int y, boolean vertical) {
