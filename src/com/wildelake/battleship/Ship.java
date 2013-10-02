@@ -35,9 +35,9 @@ public class Ship {
 	
 	//returns true if the ship is hit on all points, false otherwise
 	public boolean isSunk() { 
-		boolean out = false;
+		boolean out = true;
 		for(Point p : hitbox) {
-			out = out || p.isHit();
+			out = out && p.isHit();
 		}
 		return out;
 	}
