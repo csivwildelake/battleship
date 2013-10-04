@@ -3,7 +3,7 @@ package com.wildelake.battleship;
 import java.util.ArrayList;
 
 public class Ship {
-	ArrayList<Point> hitbox;
+	private ArrayList<Point> hitbox;
 	
 	private Ship(int x, int y, boolean vertical, int length) {
 		/* x and y determine key point of ship (lowest x, lowest y)
@@ -40,6 +40,9 @@ public class Ship {
 			out = out && p.isHit();
 		}
 		return out;
+	}
+	public boolean containsPoint(Point p) {
+		return hitbox.contains(p);
 	}
 
 	public class AircraftCarrier extends Ship {
