@@ -7,10 +7,10 @@ public class Board {
 	
 	public boolean incomingAttack(int x, int y) {			//Returns true if hit and false if not a hit. 
 		boolean hitOrMiss = false;
-		// TODO The code here should check the incoming coordinate against each ship, and if it's in any, make hitOrMiss true while marking that ship coord as hit. 
 		for(int i = 0; i < containedShips.length; i++){
-			for(int j =0; j < containedShips[i].getHitbox().size(); j++){
-				
+			if(containedShips[i].containsPoint(new Point(x,y))){
+				containedShips[i].hit(new Point(x,y));
+				hitOrMiss = true;
 			}
 		}
 		
@@ -30,7 +30,9 @@ public class Board {
 		}
 		return wasHit;
 	}
-	
+	public Ship[] getShips(){
+		return containedShips;
+	}
 	
 	public CellState cellState(int x, int y) {				//Returns the state of the targeted cell of this board (Ie, attacksAgainst). 
 		return attacksAgainst[x][y];

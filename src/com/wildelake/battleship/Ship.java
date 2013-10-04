@@ -48,7 +48,15 @@ public class Ship {
 		}
 		return out;
 	}
-
+	public void hit(Point p){
+		if(this.containsPoint(p)){
+			for(int i = 0; i < hitbox.size(); i++){
+				if(hitbox.get(i).equals(p)){
+					hitbox.get(i).hit();
+				}
+			}
+		}
+	}
 	public class AircraftCarrier extends Ship {
 		public AircraftCarrier(int x, int y, boolean vertical) {
 			super(x,y,vertical,5);
