@@ -42,7 +42,11 @@ public class Ship {
 		return out;
 	}
 	public boolean containsPoint(Point p) {
-		return hitbox.contains(p);
+		boolean out = false;
+		for(Point po : hitbox) {
+			out = out || po.equals(p);
+		}
+		return out;
 	}
 
 	public class AircraftCarrier extends Ship {
