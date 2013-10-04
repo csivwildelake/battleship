@@ -29,4 +29,12 @@ public class Point {
 	public void hit() {
 		this.setHit(true);
 	}
+	public boolean equals(Object o){
+		if(o instanceof Point){
+			Point p = (Point) o;
+			return ((p.getX() == this.getX())&&(p.getY() == this.getY())&&(p.isHit() == this.isHit()));
+		}else{
+			return false;	
+		}
+	}
 }

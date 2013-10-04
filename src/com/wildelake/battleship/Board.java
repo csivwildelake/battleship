@@ -8,6 +8,12 @@ public class Board {
 	public boolean incomingAttack(int x, int y) {			//Returns true if hit and false if not a hit. 
 		boolean hitOrMiss = false;
 		// TODO The code here should check the incoming coordinate against each ship, and if it's in any, make hitOrMiss true while marking that ship coord as hit. 
+		for(int i = 0; i < containedShips.length; i++){
+			for(int j =0; j < containedShips[i].getHitbox().size(); j++){
+				
+			}
+		}
+		
 		if(hitOrMiss){
 			attacksAgainst[x][y] = CellState.Hit;
 		}else{
